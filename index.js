@@ -41,4 +41,5 @@ for(const person of people){
     //const { color } = person; - destrukturizacija
     colors.push(color);
 }
+//one more test
 console.log(colors);
