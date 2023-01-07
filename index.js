@@ -38,7 +38,7 @@ const colors = [];
  });*/
 for(const person of people){
     const color = person.color;
-    //const { color } = person; - destrukturizacija
+    //const { color } = person;
     colors.push(color);
 }
 //one more test
