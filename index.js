@@ -1,45 +1,58 @@
 const people = [
     {
-        name: "Petras",
+        name: "testName",
         color: 'blue',
     },
     {
-        name: "Petras",
+        name: "testName",
         color: 'red',
     },
     {
-        name: "Petras",
+        name: "testName",
         color: 'green',
     },
     {
-        name: "Petras",
+        name: "testName",
         color: 'yellow',
     },
     {
-        name: "Petras",
+        name: "testName",
         color: 'blue',
     },
     {
-        name: "Petras",
+        name: "testName",
         color: 'green',
     },
 ];
 
-const colors = [];
+const colorsCount = [];
 
-/*for( let i=0; i<people.length; i++){
-    const person = people[i];
-    const { color } = person;
-    colors.push(color);
-}*/
- /*people.forEach(person => { - slowest cycle
-    const { color } = person;
-    colors.push(color);
- });*/
+ //selecting colors and their frequency in array
 for(const person of people){
     const color = person.color;
-    //const { color } = person;
-    colors.push(color);
+    colorsCount[color] = colorsCount[color] ?  colorsCount[color] + 1 : 1;
 }
-//one more test
-console.log(colors);
+
+
+//finding quantity of most frequent element(color, name is not relevant)
+let mostPopularColorName = '';
+let mostPopularColorCount = 0;
+for (const color in colorsCount) {
+    const count = colorsCount[color];
+    if(count > mostPopularColorCount){
+        mostPopularColorCount = count;
+    }
+}
+
+console.log(mostPopularColorCount, mostPopularColorName );
+
+
+//find name(-s) of most frequent element(colors)
+const mostPopularColorNames = [];
+for (const color in colorsCount) {
+    const count = colorsCount[color];
+    if (count === mostPopularColorCount){
+        mostPopularColorNames.push(color);
+    }
+}
+console.log(mostPopularColorNames);
